@@ -945,17 +945,6 @@ class App(BaseApp):
                 self._components["filters.accordion"],
             ],
         ).then(
-            fn=self._setup_asyncio_framework,
-            inputs=[
-                self._components["settings.scraper_service_usage"],
-                self._session_state,
-            ],
-            outputs=self._session_state,
-        ).then(
-            # Empty the search term in the UI
-            fn=lambda: None,
-            outputs=search_term,
-        ).then(
             fn=self._update_filters,
             inputs=[
                 self._components["filters.source"],
@@ -970,6 +959,17 @@ class App(BaseApp):
             fn=self._feed_cards_to_ui,
             inputs=[self._local_state, self._session_state],
             outputs=self._components["main.cards"],
+        ).then(
+            fn=self._setup_asyncio_framework,
+            inputs=[
+                self._components["settings.scraper_service_usage"],
+                self._session_state,
+            ],
+            outputs=self._session_state,
+        ).then(
+            # Empty the search term in the UI
+            fn=lambda: None,
+            outputs=search_term,
         ).then(fn=lambda: gr.update(active=True), outputs=timer).then(
             fn=self._conclusion,
             inputs=self._session_state,

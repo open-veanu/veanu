@@ -30,7 +30,6 @@ from vianu.spock.settings import (
     SCRAPING_SERVICE,
     USE_SCRAPING_SERVICE_FOR,
     SCRAPERAPI_BASE_URL,
-    REQUEST_TIMEOUT,
 )
 from vianu.spock.settings import (
     PUBMED_ESEARCH_URL,
@@ -44,7 +43,6 @@ logger = logging.getLogger(__name__)
 
 class Scraper(ABC):
     _source = None
-    _timeout = REQUEST_TIMEOUT
 
     def __init__(self, api_key: str | None = None):
         """Initialize the Scraper object."""
@@ -80,35 +78,39 @@ class Scraper(ABC):
 
     async def _get_html(self, url: str, headers: dict | None = None):
         if self._use_api_service:
-            return self._service_get_html(url=url)
+            return await self._service_get_html(url=url)
         else:
-            return await self._aiohttp_get_html(url=url, headers=headers)
+            return await self._direct_get_html(url=url, headers=headers)
 
-    async def _aiohttp_get_html(self, url: str, headers: dict | None = None) -> str:
+
+    async def _aiohttp_get(self, url: str, headers: dict | None = None, params: dict | None = None) -> str:
         """Get the content of a given URL by an aiohttp GET request."""
-
-        self.logger.debug(f"search {self._source} using aiohttp with url={url}")
         async with aiohttp.ClientSession(headers=headers) as session:
-            async with session.get(url=url) as response:
+            async with session.get(url=url, params=params) as response:
                 response.raise_for_status()
                 text = await response.text()
         return text
+    
 
-    def _service_get_html(self, url: str) -> str:
-        """Scrape the content of a given URL by a scraping api service."""
+    async def _direct_get_html(self, url: str, headers: dict | None = None) -> str:
+        """Get the content of a given URL by a direct GET request without proxy."""
+        self.logger.debug(f"search {self._source} using direct request with url={url}")
+        text = await self._aiohttp_get(url=url, headers=headers)
+        return text
 
+
+    async def _service_get_html(self, url: str) -> str:
+        """Get the content of a given URL by a GET request accross a scraping service."""
         self.logger.debug(
             f"search {self._source} using service={SCRAPING_SERVICE} with url={url}"
         )
         api_key = self._api_key
         base_url = SCRAPERAPI_BASE_URL
-        payload = {
+        params = {
             "api_key": api_key,
             "url": url,
         }
-        response = requests.get(base_url, params=payload, timeout=self._timeout)
-        response.raise_for_status()
-        text = response.text
+        text = await self._aiohttp_get(url=base_url, params=params)
         return text
 
 
@@ -675,7 +677,7 @@ class MHRAScraper(Scraper):
 
     async def _extract_text(self, url: str) -> str:
         """Extract the text from the document."""
-        content = await self._aiohttp_get_html(url=url)
+        content = await self._direct_get_html(url=url)
         soup = BeautifulSoup(content, "html.parser")
         main = soup.find("main")
         text = main.get_text()
@@ -907,7 +909,7 @@ class FDAScraper(Scraper):
         return None
 
     async def _parse_item_page(self, url: str) -> List[Document]:
-        content = await self._aiohttp_get_html(url=url)
+        content = await self._direct_get_html(url=url)
         soup = BeautifulSoup(content, "html.parser")
         main = soup.find("main")
 

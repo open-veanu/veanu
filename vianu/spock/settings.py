@@ -25,7 +25,6 @@ MAX_DOCS = {
     "deep": 80,
 }
 N_SCP_TASKS = 4
-REQUEST_TIMEOUT = 5
 
 PUBMED_ESEARCH_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
 PUBMED_EFETCH_URL = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
