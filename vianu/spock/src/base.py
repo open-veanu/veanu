@@ -179,7 +179,7 @@ class Setup(Identicator, Serializable):
     file_name: str | None = None
 
     # Following fields are set by the environment variables or as session state
-    scraperapi_key: str | None = None
+    scrapingapi_key: str | None = None
     openai_api_key: str | None = None
     llama_base_url: str | None = None
 
@@ -199,7 +199,7 @@ class Setup(Identicator, Serializable):
     def from_namespace(cls, args_: Namespace) -> Self:
         """Creates a :class:`Setup` object from a :class:`argparse.Namespace` object."""
         args_dict = vars(args_)
-        args_dict["scraperapi_key"] = os.getenv("SCRAPERAPI_KEY")
+        args_dict["scrapingapi_key"] = os.getenv("SCRAPINGAPI_KEY")
         args_dict["openai_api_key"] = os.getenv("OPENAI_API_KEY")
         args_dict["llama_base_url"] = os.getenv("OLLAMA_BASE_URL")
         return cls(id_=str(args_dict), **args_dict)

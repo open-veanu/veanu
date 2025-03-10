@@ -13,7 +13,6 @@ from datetime import datetime
 from io import BytesIO
 import logging
 import re
-import requests
 from typing import List
 import xml.etree.ElementTree as ET  # nosec
 
@@ -29,7 +28,7 @@ from vianu.spock.settings import (
     MAX_CHUNK_SIZE,
     SCRAPING_SERVICE,
     USE_SCRAPING_SERVICE_FOR,
-    SCRAPERAPI_BASE_URL,
+    SCRAPINGFISH_BASE_URL,
 )
 from vianu.spock.settings import (
     PUBMED_ESEARCH_URL,
@@ -105,7 +104,7 @@ class Scraper(ABC):
             f"search {self._source} using service={SCRAPING_SERVICE} with url={url}"
         )
         api_key = self._api_key
-        base_url = SCRAPERAPI_BASE_URL
+        base_url = SCRAPINGFISH_BASE_URL
         params = {
             "api_key": api_key,
             "url": url,
@@ -1023,7 +1022,7 @@ class ScraperFactory:
             raise ValueError(f"unknown source={source}")
 
         api_key = (
-            self._setup.scraperapi_key
+            self._setup.scrapingapi_key
             if self._setup.service and source in self._use_service_for
             else None
         )

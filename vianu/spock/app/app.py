@@ -80,8 +80,8 @@ class SessionState:
     spocks: SpoCKList = field(default_factory=list)
 
     # Scraper settings
-    scraperapi_key: str | None = field(
-        default_factory=lambda: os.environ.get("SCRAPERAPI_KEY")
+    scrapingapi_key: str | None = field(
+        default_factory=lambda: os.environ.get("SCRAPINGAPI_KEY")
     )
 
     # LLM settings
@@ -162,10 +162,10 @@ class App(BaseApp):
                 with gr.Group(visible=False) as self._components[
                     "settings.scraper_service_group"
                 ]:
-                    value = os.environ.get("SCRAPERAPI_KEY")
+                    value = os.environ.get("SCRAPINGAPI_KEY")
                     placeholder = "api_key of scraperapi" if value is None else None
                     gr.Markdown("---")
-                    self._components["settings.scraperapi_key"] = gr.Textbox(
+                    self._components["settings.scrapingapi_key"] = gr.Textbox(
                         label="api_key",
                         show_label=False,
                         info="api_key",
@@ -344,11 +344,11 @@ class App(BaseApp):
             return gr.update(visible=False), session_state
 
     @staticmethod
-    def _set_scraperapi_key(api_key: str, session_state: SessionState) -> SessionState:
+    def _set_scrapingapi_key(api_key: str, session_state: SessionState) -> SessionState:
         """Setup scraperapi api_key"""
         log_key = "*****" if api_key else "None"
         logger.debug(f"set scraperapi api_key {log_key}")
-        session_state.scraperapi_key = api_key
+        session_state.scrapingapi_key = api_key
 
     @staticmethod
     def _show_llm_settings(
@@ -526,7 +526,7 @@ class App(BaseApp):
 
         # Check the scraper settings
         if service_usage:
-            if session_state.scraperapi_key is None:
+            if session_state.scrapingapi_key is None:
                 raise gr.Error("scraping service' api_key is not set")
 
         # Check the LLM settings
@@ -633,7 +633,7 @@ class App(BaseApp):
             log_level=local_state["log_level"],
             n_scp_tasks=local_state["n_scp_tasks"],
             n_ner_tasks=local_state["n_ner_tasks"],
-            scraperapi_key=session_state.scraperapi_key,
+            scrapingapi_key=session_state.scrapingapi_key,
             openai_api_key=session_state.openai_api_key,
             llama_base_url=session_state.ollama_base_url,
         )
@@ -814,9 +814,9 @@ class App(BaseApp):
 
     def _event_settings_scraperapi(self):
         """Callback of the scraperapi settings."""
-        self._components["settings.scraperapi_key"].change(
-            fn=self._set_scraperapi_key,
-            inputs=[self._components["settings.scraperapi_key"], self._session_state],
+        self._components["settings.scrapingapi_key"].change(
+            fn=self._set_scrapingapi_key,
+            inputs=[self._components["settings.scrapingapi_key"], self._session_state],
             outputs=self._session_state,
         )
 
