@@ -345,6 +345,7 @@ class App(BaseApp):
         log_key = "*****" if api_key else "None"
         logger.debug(f"set scraperapi api_key {log_key}")
         session_state.scrapingapi_key = api_key
+        return session_state
 
     @staticmethod
     def _show_llm_settings(
