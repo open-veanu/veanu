@@ -224,10 +224,6 @@ class App(BaseApp):
                         interactive=True,
                     )
 
-                self._components["settings.test_connection_button"] = gr.Button(
-                    value="Test connection", interactive=True
-                )
-
             with gr.Accordion(
                 label="Filters", open=True, visible=False
             ) as self._components["filters.accordion"]:
@@ -851,14 +847,6 @@ class App(BaseApp):
             outputs=self._session_state,
         )
 
-    def _event_test_connection(self):
-        """Test the connection to the LLM model."""
-        self._components["settings.test_connection_button"].click(
-            fn=self._test_connection,
-            inputs=self._session_state,
-            outputs=self._session_state,
-        )
-
     def _event_filters(self):
         self._components["filters.sort_by"].change(
             fn=self._feed_details_to_ui,
@@ -1072,7 +1060,6 @@ class App(BaseApp):
         self._event_choose_llm()
         self._event_settings_ollama()
         self._event_settings_openai()
-        self._event_test_connection()
 
         # Filter events
         self._event_filters()
