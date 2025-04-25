@@ -22,7 +22,7 @@ jobs:
     - name: Python Vulnerability Check
       #bandit exits by defaul with status 1 if a vulerability was found. Status unequal to 0 lead to a github action failure
       run: |
-        poetry run bandit -r vianu
+        poetry run bandit -r veanu
 
     - name: Lint with Ruff
       run: |
@@ -34,4 +34,4 @@ jobs:
 
     - name: Run Unit Tests
       run: |
-        poetry run pytest --cov=vianu --cov-report=html --cov-report=xml tests/tests-*/* -s
+        poetry run pytest --cov=veanu --cov-report=html --cov-report=xml tests/tests-*/* -s

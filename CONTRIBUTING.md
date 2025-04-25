@@ -1,19 +1,19 @@
-# Contributing to Vianu
+# Contributing to open-veanu/veanu
 
-First, let us thank you for considering contributing to Vianu! Your involvement is vital to the project's success.
+First, let us thank you for considering contributing to open-veanu/veanu! Your involvement is vital to the project's success.
 
 ## How Can You Contribute?
 
-- **Reporting Bugs**: If you encounter any issues, please [open an issue](https://github.com/smc40/vianu/issues) with detailed information.
-- **Suggesting Enhancements**: Have an idea to improve Vianu? [Submit a feature request](https://github.com/smc40/vianu/issues) outlining your suggestion.
+- **Reporting Bugs**: If you encounter any issues, please [open an issue](https://github.com/open-veanu/veanu/issues) with detailed information.
+- **Suggesting Enhancements**: Have an idea to improve veanu? [Submit a feature request](https://github.com/open-veanu/veanu/issues) outlining your suggestion.
 - **Submitting Pull Requests**: Ready to code? Follow the steps below to submit your contributions.
 
 ## Getting Started
 
-1. **Clone the Repository**: Clone the Vianu repository to your local machine:
+1. **Clone the Repository**: Clone the veanu repository to your local machine:
    ```bash
-   git clone https://github.com/smc40/vianu.git
-   cd vianu
+   git clone https://github.com/open-veanu/veanu.git
+   cd veanu
    ```
 
 2. **Create a Branch**: Start by creating a new branch for your feature or bugfix:
@@ -45,7 +45,7 @@ First, let us thank you for considering contributing to Vianu! Your involvement 
    git push origin feature/your-feature-name
    ```
 
-8. **Open a Pull Request**: Go to the Vianu repository on GitHub and open a pull request from your branch.
+8. **Open a Pull Request**: Go to the open-veanu/veanu repository on GitHub and open a pull request from your branch.
 
 ## Code Style
 

@@ -1,4 +1,4 @@
-from vianu.spock.src import scraping as scp
+from veanu.spock.src import scraping as scp
 
 
 def test_split_text_into_chunks_zero_remaning():

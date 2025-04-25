@@ -39,8 +39,8 @@ docker exec -it ollama ollama pull llama3.2
 
 #### Python environment
 ```bash
-git clone https://github.com/open-vianu/vianu.git
-cd vianu
+git clone https://github.com/open-veanu/veanu.git
+cd veanu
 poetry install
 poetry shell
 ```
@@ -54,17 +54,17 @@ or alternatively set the corresponding environment variable through the UI.
 
 ### Run demo pipeline
 ```bash
-python vianu/spock/launch_demo_pipeline.py
+python veanu/spock/launch_demo_pipeline.py
 ```
 
 ### Run demo app
 ```bash
-python vianu/spock/launch_demo_app.py
+python veanu/spock/launch_demo_app.py
 ```
 
 ### CLI
 ```bash
-python -m vianu.spock --term dafalgan --model llama --data-path "/tmp/spock" --data-file "spock_data" --log-level DEBUG
+python -m veanu.spock --term dafalgan --model llama --data-path "/tmp/spock" --data-file "spock_data" --log-level DEBUG
 ```
 
 ### Disclaimer

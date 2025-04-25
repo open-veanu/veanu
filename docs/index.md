@@ -4,13 +4,13 @@ layout: home
 nav_order: 1
 ---
 
-# Welcome to VIANU!
+# Welcome to open-veanu/veanu!
 
-# Vianu is a package meant to provide support to devs in the life sciences
+# veanu is a package meant to provide support to devs in the life sciences
 
 [Get Started](#getting-started){: .btn .btn-purple }
 
-[Vianu] is a *Python package* designed for developers working in the life sciences and healthcare sectors. 
+[veanu] is a *Python package* designed for developers working in the life sciences and healthcare sectors. 
 It provides access to a variety of tools and workflows, allowing users to quickly build, validate, and deploy 
 data-driven applications.
 
@@ -32,22 +32,9 @@ This is how you install all of our cool ninja moves
 
 ## Quick Installation
 ```bash
-pip install vianu==0.1.2
+pip install veanu
 ```
 
-### Example usage
+go ahead and `have fun` with this repository!
 
-```python
-from vianu.fraudcrawler.src.client import FraudcrawlerClient
-
-fc = FraudcrawlerClient()
-fc.serpapi_token = "your_token"
-fc.zyte_api_key = "your_key"
-
-df = fc.search("sildenafil", num_results=5, location="Switzerland")
-print(df)
-```
-
-Other than that, go ahead and `have fun` with this repository!
-
-[Vianu]: https://github.com/open-vianu/vianu
+[veanu]: https://github.com/open-veanu/veanu

@@ -1,14 +1,14 @@
 import pytest
 
-from vianu.lasa.src.units import (
+from veanu.lasa.src.units import (
     Product,
     AuthorizationUnit,
     SwissmedicAuthorization,
     FDAAuthorization,
 )
-from vianu.lasa.src.units import AuthorizationFactory
-from vianu.lasa.src.base import LASA, Match
-from vianu.lasa.__main__ import process
+from veanu.lasa.src.units import AuthorizationFactory
+from veanu.lasa.src.base import LASA, Match
+from veanu.lasa.__main__ import process
 
 _N_SMC_PRODUCTS = 5657
 _N_FDA_PRODUCTS = 8075
