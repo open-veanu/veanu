@@ -94,16 +94,16 @@ Before you begin, ensure you have the following installed:
 1. **Download package**
 
    ```bash
-   pip install vianu
+   pip install veanu
    ```
 2. **Launch app** (with starterscript)
     ```bash
-    vianu_drugsafetycompare_app
+    veanu_drugsafetycompare_app
     ```
     The application will launch and can be accessed via your web browser at `http://127.0.0.1:7860/?__theme=light`.
 3. **Use Pipeline to Extract Drug Labels**: In Python you can use the following:
     ```python
-        from vianu.drugsafetycompare.src.germany import GermanDrugInfoExtractor
+        from veanu.drugsafetycompare.src.germany import GermanDrugInfoExtractor
         extractor = GermanDrugInfoExtractor()
         try:
             # Define the drug name

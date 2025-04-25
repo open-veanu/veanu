@@ -1,11 +1,11 @@
 import pytest
 from unittest.mock import patch, MagicMock, PropertyMock
-from vianu.drugsafetycompare.src.extract_germany import GermanDrugInfoExtractor
+from veanu.drugsafetycompare.src.extract_germany import GermanDrugInfoExtractor
 
 
 @pytest.fixture
 def mock_webdriver():
-    with patch("vianu.drugsafetycompare.src.extract_germany.webdriver.Chrome") as mock:
+    with patch("veanu.drugsafetycompare.src.extract_germany.webdriver.Chrome") as mock:
         yield mock
 
 

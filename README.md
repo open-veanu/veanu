@@ -1,36 +1,36 @@
 <p align="center">
-    <img src="https://avatars.githubusercontent.com/u/189356226?s=400&u=4bc88c9f31bc573f84d4222461c520e19c1c97a4&v=4" alt="vianu Logo" width="150" height="150" />
-    <h3 align="center">vianu</h3>
+    <img src="https://avatars.githubusercontent.com/u/189356226?s=400&u=4bc88c9f31bc573f84d4222461c520e19c1c97a4&v=4" alt="veanu Logo" width="150" height="150" />
+    <h3 align="center">veanu</h3>
     <p align="center">Together we are building an Open Source Community for Life Sciences.</p>
     <p align="center">
-        <a href="https://badge.fury.io/py/vianu"><img alt="PyPI version" src="https://badge.fury.io/py/vianu.svg?icon=si%3Apython"></a>
+        <a href="https://badge.fury.io/py/veanu"><img alt="PyPI version" src="https://badge.fury.io/py/veanu.svg?icon=si%3Apython"></a>
     </p>
 </p>
 
 ---
 
-Vianu is a Python package designed for developers working in the **life sciences and healthcare** sectors. It provides access to a variety of tools and workflows, allowing users to quickly build, validate, and deploy data-driven applications.
+veanu is a Python package designed for developers working in the **life sciences and healthcare** sectors. It provides access to a variety of tools and workflows, allowing users to quickly build, validate, and deploy data-driven applications.
 
 ## Available Tools
 
 - **Lasa**: A tool for phonetic comparison of novel drug names with authorized ones from different locations.
 - **FraudCrawler**: A data ingestion and transformation pipeline for real-world healthcare data.
 - **SpoCK**: A tool to search public websites for spotting adverse drug reactions
-- **DrugSafetyCompare**: A tool to search for published drug labels and compare their safety profiles. [See in action](https://huggingface.co/spaces/vianu/drugsafetycompare)
+- **DrugSafetyCompare**: A tool to search for published drug labels and compare their safety profiles. [See in action](https://huggingface.co/spaces/veanu/drugsafetycompare)
 
 ## Installation
 
-To install Vianu, use the following command:
+To install veanu, use the following command:
 
 ```bash
-pip install vianu
+pip install veanu
 ```
 
-Alternatively, you can install vianu from source:
+Alternatively, you can install veanu from source:
 
 ```bash
-git clone https://github.com/smc40/vianu.git
-cd vianu
+git clone https://github.com/open-veanu/veanu.git
+cd veanu
 poetry install
 poetry shell
 ```
@@ -44,10 +44,10 @@ TBD
 #### Launch a Demo Pipeline
 
 ```bash
-cd vianu/lasa
+cd veanu/lasa
 poetry install
 poetry shell
-python -m vianu.tools.tici.launch_demo_pipeline
+python -m veanu.tools.tici.launch_demo_pipeline
 ```
 
 ### FraudCrawler
@@ -55,13 +55,13 @@ python -m vianu.tools.tici.launch_demo_pipeline
 #### Launch a Demo App
 
 ```bash
-python vianu/fraudcrawler/launch_demo_app.py
+python veanu/fraudcrawler/launch_demo_app.py
 ```
 
 #### Launch a Demo Pipeline
 
 ```bash
-python -m vianu.fraudcrawler.launch_demo_pipeline
+python -m veanu.fraudcrawler.launch_demo_pipeline
 ```
 
 
@@ -74,11 +74,11 @@ To lauch the demo app do the following:
 ```bash
 poetry install
 poetry shell
-python vianu/tools/drugsafetycompare/launch_demo_app_count.py
+python veanu/tools/drugsafetycompare/launch_demo_app_count.py
 ```
 Or simply launch the starter-script:
 ```bash
-vianu_drugsafetycompare_app
+veanu_drugsafetycompare_app
 
 ```
 
@@ -87,7 +87,7 @@ vianu_drugsafetycompare_app
 ```bash
 poetry install
 poetry shell
-python -m vianu.drugsafetycompare.launch_demo_pipeline
+python -m veanu.drugsafetycompare.launch_demo_pipeline
 ```
 
 
@@ -96,13 +96,13 @@ python -m vianu.drugsafetycompare.launch_demo_pipeline
 #### Launch a Demo App
 
 ```bash
-python vianu/spock/launch_demo_app.py
+python veanu/spock/launch_demo_app.py
 ```
 
 #### Launch a Demo Pipeline
 
 ```bash
-python -m vianu.spock.launch_demo_pipeline
+python -m veanu.spock.launch_demo_pipeline
 ```
 
 
@@ -129,7 +129,7 @@ This project is licensed under the MIT License.
 
 ## Feedback and Support
 
-For any issues or feature requests, please use the [GitHub Issues](https://github.com/smc40/vianu/issues) page.
+For any issues or feature requests, please use the [GitHub Issues](https://github.com/open-veanu/veanu/issues) page.
 
 ## Acknowledgments
 

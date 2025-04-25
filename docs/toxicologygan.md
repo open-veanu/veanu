@@ -6,7 +6,7 @@ nav_order: 3
 
 # Welcome to ToxicologyGAN
 
-**ToxicologyGAN** is an out-of-the-box tool within the vianu package to help users facilitate the training of a GAN
+**ToxicologyGAN** is an out-of-the-box tool within the open-veanu/veanu package to help users facilitate the training of a GAN
 network in the context of simulating ...
 
 [Skip to Installation](#installation-guide){: .btn .btn-purple }
@@ -22,7 +22,7 @@ to generate new data points.
 
 Based on the work of [Chen et al. (Nature Communications, 2023)](https://www.nature.com/articles/s41467-023-42933-9), 
 we implemented a simpler version of the code to make it more accessible and easy to use. Once having the correct input 
-data, the training of the network is easily performed with the implementation in vianu.
+data, the training of the network is easily performed with the implementation in veanu.
 
 
 ### Prerequisites
@@ -35,7 +35,7 @@ data, the training of the network is easily performed with the implementation in
 1. **Download package**
 
    ```bash
-   pip install vianu
+   pip install veanu
    ```
    
 2. **Use Pipeline to train GAN network and generate new data points**: In Python you can use the following:

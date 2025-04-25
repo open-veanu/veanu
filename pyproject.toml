@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "vianu"
+name = "veanu"
 version = "0.1.3"
-description = "Vianu enables developers to access tools applicable to life sciences and healthcare."
+description = "veanu enables developers to access tools applicable to life sciences and healthcare."
 authors = [
-    "Nicolas Perez Gonzalez <hello@vianu.org>",
-    "Alexander Horst <hello@vianu.org>",
-    "Chriguberto Jäggli <hello@vianu.org>"
+    "Domingo Bertus <hello@veanu.ch>",
+    "NicoBerto <hello@veanu.ch>",
+    "Penguin Berthold <hello@veanu.ch>",
 ]
-repository = "https://github.com/smc40/vianu"
+repository = "https://github.com/open-veanu/veanu"
 license = "MIT"
 keywords = ["healthcare", "government", "opensource", "data science"]
 readme = "README.md"
@@ -45,8 +45,7 @@ pdfminer = "^20191125"
 google-search-results = "^2.4.2"
 
 [tool.poetry.scripts]
-vianu_fraudcrawler_app = "vianu.fraudcrawler.launch_demo_app:main"
-vianu_drugsafetycompare_app = "vianu.drugsafetycompare.launch_demo_app:main"
+veanu_drugsafetycompare_app = "veanu.drugsafetycompare.launch_demo_app:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

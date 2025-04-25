@@ -1,10 +1,10 @@
-title: vianu
+title: veanu
 description: an open-source platform for the life sciences
 theme: just-the-docs
 
-url: https://open-vianu.github.io/vianu
+url: https://open-veanu.github.io/veanu
 
-# These are individual configurations to vianu
+# These are individual configurations to veanu
 logo: "/assets/images/pingu-logo.png"
 favicon_ico: "/assets/images/favicon-pingu.ico"
 search_enabled: true

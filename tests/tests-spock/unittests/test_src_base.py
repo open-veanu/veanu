@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-from vianu.spock.src import base
+from veanu.spock.src import base
 
 
 @pytest.fixture

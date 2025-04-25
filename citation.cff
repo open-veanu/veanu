@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: 'Vianu'
+title: 'veanu'
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
@@ -9,12 +9,12 @@ authors:
     family-names: Perez Gonzalez
   - given-names: Alexander
     family-names: Horst
-repository-code: 'https://github.com/smc40/vianu'
-abstract: "Vianu enables developers to access tools applicable to life sciences and healthcare."
+repository-code: 'https://github.com/open-veanu/veanu'
+abstract: "veanu enables developers to access tools applicable to life sciences and healthcare."
 keywords:
   - healthcare
   - goverment
   - pytorch
   - tensorflow
 license: unclear
-version: 0.0.0
+version: 0.1.0

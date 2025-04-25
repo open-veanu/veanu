@@ -10,7 +10,7 @@ The `FraudCrawler` tool collects URLs suspicious of illegal activity based on me
 
 ## Usage
 ```python
-from vianu.fraudcrawler.src.client import FraudcrawlerClient
+from veanu.fraudcrawler.src.client import FraudcrawlerClient
 
 fc = FraudcrawlerClient()
 fc.serpapi_token = "your_serpapi_token"
